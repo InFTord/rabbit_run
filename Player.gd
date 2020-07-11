@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 const SPEED = 100
+const FLOOR = Vector2()
+const GRAVITY = 500
+const JUMP_POWER = 300
 
 var velocity = Vector2()
 
@@ -14,4 +17,5 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 	
+	velocity.y += (GRAVITY * delta)
 	move_and_slide(velocity)
