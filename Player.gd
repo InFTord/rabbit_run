@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const SPEED = 100
-const FLOOR = Vector2()
+const FLOOR = Vector2(0, -1)
 const GRAVITY = 500
 const JUMP_POWER = 300
 
@@ -19,7 +19,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0
 	
-	if Input.is_action_just_pressed("ui_up") && is_on_floor():
+	if Input.is_action_pressed("ui_up") && is_on_floor():
 		velocity.y = -JUMP_POWER
 	
 	velocity.y += (GRAVITY * delta)
