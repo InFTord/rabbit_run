@@ -33,6 +33,7 @@ func _physics_process(delta):
 		$AnimatedSprite.play("jump")
 	
 	if Input.is_action_just_pressed("ui_accept"):
+		$AnimatedSprite.play("fire")
 		var rock = ROCK.instance()
 		rock.direction = sign($Position2D.position.x)
 		rock.position = $Position2D.global_position

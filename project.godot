@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="rabbit_run"
 run/main_scene="res://Menu.tscn"
+boot_splash/image="res://fon/window1.png"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [display]
