@@ -35,7 +35,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		var rock = ROCK.instance()
 		rock.direction = sign($Position2D.position.x)
-		rock.position = $Position2D.global_position
+		rock.position = $Position2D.global_position.x * direction
 		get_parent().add_child(rock)
 	
 	velocity.y += (GRAVITY * delta)

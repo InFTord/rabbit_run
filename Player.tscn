@@ -16,11 +16,6 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "fire",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": false,
 "name": "jump",
@@ -29,6 +24,11 @@ animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "fire",
 "speed": 5.0
 } ]
 
@@ -48,4 +48,4 @@ current = true
 smoothing_enabled = true
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 10.6186, -12.5063 )
+position = Vector2( 10.5112, -13.2441 )
