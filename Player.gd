@@ -12,8 +12,8 @@ var velocity = Vector2()
 func _physics_process(delta):
 	if position.y > 800:
 		position.y = 0
-		if is_firing == true:
-			return
+	if is_firing == true:
+		return
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
 		$AnimatedSprite.flip_h = false
