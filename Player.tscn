@@ -29,7 +29,7 @@ animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "fire",
-"speed": 5.0
+"speed": 8.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
