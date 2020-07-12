@@ -7,4 +7,4 @@ func _ready():
 func btn_new_game():
 	get_tree().change_scene("res://Level1.tscn")
 func btn_exit():
-	get_tree().guit()
+	get_tree().quit()
