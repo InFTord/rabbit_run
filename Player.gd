@@ -20,7 +20,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 		$AnimatedSprite.flip_h = true
-		$Position2D.position.x = abs($Position2D.position.x) * -1
+		$Position2D.position.x = abs($Position2D.position.x) * (-1)
 		if is_on_floor():
 			$AnimatedSprite.play("walk")
 	else:
