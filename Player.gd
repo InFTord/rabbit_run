@@ -6,11 +6,14 @@ const GRAVITY = 500
 const JUMP_POWER = 400
 const ROCK = preload("res://Rock.tscn")
 
+var is_firing = false
 var velocity = Vector2()
 
 func _physics_process(delta):
 	if position.y > 800:
 		position.y = 0
+		if is_firing == true:
+			return
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
 		$AnimatedSprite.flip_h = false
@@ -32,12 +35,18 @@ func _physics_process(delta):
 		velocity.y = -JUMP_POWER
 		$AnimatedSprite.play("jump")
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") && is_firing == false && is_on_floor():
+		is_firing = true
 		$AnimatedSprite.play("fire")
+	
+	velocity.y += (GRAVITY * delta)
+	velocity = move_and_slide(velocity, FLOOR)
+
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == "fire":
 		var rock = ROCK.instance()
 		rock.direction = sign($Position2D.position.x)
 		rock.position = $Position2D.global_position
 		get_parent().add_child(rock)
-	
-	velocity.y += (GRAVITY * delta)
-	velocity = move_and_slide(velocity, FLOOR)
+		is_firing = false
