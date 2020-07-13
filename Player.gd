@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 250
+const SPEED = 200
 const FLOOR = Vector2(0, -1)
 const GRAVITY = 500
 const JUMP_POWER = 400
@@ -8,6 +8,7 @@ const ROCK = preload("res://Rock.tscn")
 
 var is_firing = false
 var velocity = Vector2()
+
 
 func _physics_process(delta):
 	if position.y > 800:
