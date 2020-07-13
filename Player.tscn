@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://animation/idle/idle_2.png" type="Texture" id=1]
+[ext_resource path="res://animation_rabbit/idle/idle_2.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://animation/idle/idle_1.png" type="Texture" id=3]
-[ext_resource path="res://animation/run/run_1.png" type="Texture" id=4]
-[ext_resource path="res://animation/run/run_2.png" type="Texture" id=5]
-[ext_resource path="res://animation/jump/jump_0.png" type="Texture" id=6]
-[ext_resource path="res://animation/fire/fire_1.png" type="Texture" id=7]
-[ext_resource path="res://animation/fire/fire_2.png" type="Texture" id=8]
+[ext_resource path="res://animation_rabbit/idle/idle_1.png" type="Texture" id=3]
+[ext_resource path="res://animation_rabbit/run/run_1.png" type="Texture" id=4]
+[ext_resource path="res://animation_rabbit/run/run_2.png" type="Texture" id=5]
+[ext_resource path="res://animation_rabbit/jump/jump_0.png" type="Texture" id=6]
+[ext_resource path="res://animation_rabbit/fire/fire_1.png" type="Texture" id=7]
+[ext_resource path="res://animation_rabbit/fire/fire_2.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
