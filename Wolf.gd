@@ -7,7 +7,7 @@ const GRAVITY = 300
 var velocity = Vector2()
 var direction = 1
 var is_alive = true
-#var is_attacking = false
+var is_attacking = false
 
 func kill():
 	is_alive = false
@@ -17,7 +17,7 @@ func kill():
 	$DeathCollision.set_deferred("disabled",false)
 	
 func _physics_process(delta):
-	if is_alive == true: #&& is_attacking == false:
+	if is_alive == true && is_attacking == false:
 		velocity.x = SPEED * direction
 		$AnimatedSprite.play("run")
 	velocity.y += (GRAVITY * delta)
