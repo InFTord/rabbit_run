@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Wolf.gd" type="Script" id=1]
 [ext_resource path="res://animation_wolf/run/run_2.png" type="Texture" id=2]
 [ext_resource path="res://animation_wolf/run/run_1.png" type="Texture" id=3]
+[ext_resource path="res://animation_wolf/death/smert3.png" type="Texture" id=4]
+[ext_resource path="res://animation_wolf/death/smert1.png" type="Texture" id=5]
+[ext_resource path="res://animation_wolf/death/smert2.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -10,6 +13,11 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "death",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -20,9 +28,14 @@ script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "run"
-frame = 1
+animation = "death"
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -8.1895, 9.76439 )
 shape = SubResource( 2 )
+
+[node name="DeathCollision" type="CollisionPolygon2D" parent="."]
+position = Vector2( -15.119, 29.9231 )
+polygon = PoolVector2Array( -57.6116, -2.92165, -31.1533, 4.00791, -1.23013, -18.9856, 21.7634, -18.0407, 40.6622, -25.2852, 55.7813, -9.53624, 44.442, 0.543129, 48.2218, 7.47269, 38.1424, 11.8824, 29.6379, -1.03177, 10.7391, 9.0476, 7.27434, 18.182, 0.344772, 24.7966, -7.52974, 18.812, -0.915154, 11.2525, -14.4593, 12.8274, -58.2416, 15.9772 )
+disabled = true

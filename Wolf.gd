@@ -6,20 +6,20 @@ const GRAVITY = 300
 
 var velocity = Vector2()
 var direction = 1
-#var is_alive = true
+var is_alive = true
 #var is_attacking = false
 
-#func kill():
-#	is_alive = false
-#	velocity.x = 0
-#	$AnimatedSprite.play("dead")
-#	$CollisionShape2D.set_deferred("disabled", true)
-#	$DeadCollision.set_deferred("disabled",false)
+func kill():
+	is_alive = false
+	velocity.x = 0
+	$AnimatedSprite.play("death")
+	$CollisionShape2D.set_deferred("disabled", true)
+	$DeathCollision.set_deferred("disabled",false)
 	
 func _physics_process(delta):
-#	if is_alive == true && is_attacking == false:
-	velocity.x = SPEED * direction
-	$AnimatedSprite.play("run")
+	if is_alive == true: #&& is_attacking == false:
+		velocity.x = SPEED * direction
+		$AnimatedSprite.play("run")
 	velocity.y += (GRAVITY * delta)
 	velocity = move_and_slide(velocity, FLOOR)
 	if is_on_wall():
