@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fon/country_field.png" type="Texture" id=2]
 [ext_resource path="res://TileMap.tres" type="TileSet" id=3]
-[ext_resource path="res://Wolf.tscn" type="PackedScene" id=4]
 
 [node name="Level1" type="Node2D"]
 
@@ -24,6 +23,3 @@ scroll_base_scale = Vector2( 0, 0 )
 position = Vector2( 399.994, 199.915 )
 scale = Vector2( 0.834854, 0.669733 )
 texture = ExtResource( 2 )
-
-[node name="Wolf" parent="." instance=ExtResource( 4 )]
-position = Vector2( 585.679, 282.072 )
