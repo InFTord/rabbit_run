@@ -12,41 +12,41 @@ var velocity = Vector2()
 
 func death():
 	$AnimatedSprite.play("death")
-	$CollisionShape2D.set_deferred("disabled", true)
 	is_dead = true
 
 func _physics_process(delta):
-	if position.y > 800:
-		position.y = 0
-	if is_firing == true:
-		return
-	if Input.is_action_pressed("ui_right"):
-		velocity.x = SPEED
-		$AnimatedSprite.flip_h = false
-		$Position2D.position.x = abs($Position2D.position.x)
-		if is_on_floor():
-			$AnimatedSprite.play("walk")
-	elif Input.is_action_pressed("ui_left"):
-		velocity.x = -SPEED
-		$AnimatedSprite.flip_h = true
-		$Position2D.position.x = abs($Position2D.position.x) * -1
-		if is_on_floor():
-			$AnimatedSprite.play("walk")
-	else:
-		velocity.x = 0
-		if is_on_floor():
-			$AnimatedSprite.play("idle")
-	
-	if Input.is_action_pressed("ui_up") && is_on_floor():
-		velocity.y = -JUMP_POWER
-		$AnimatedSprite.play("jump")
-	
-	if Input.is_action_just_pressed("ui_accept") && is_firing == false && is_on_floor():
-		is_firing = true
-		$AnimatedSprite.play("fire")
-	
-	velocity.y += (GRAVITY * delta)
-	velocity = move_and_slide(velocity, FLOOR)
+	if is_dead == false:
+		if position.y > 800:
+			position.y = 0
+		if is_firing == true:
+			return
+		if Input.is_action_pressed("ui_right"):
+			velocity.x = SPEED
+			$AnimatedSprite.flip_h = false
+			$Position2D.position.x = abs($Position2D.position.x)
+			if is_on_floor():
+				$AnimatedSprite.play("walk")
+		elif Input.is_action_pressed("ui_left"):
+			velocity.x = -SPEED
+			$AnimatedSprite.flip_h = true
+			$Position2D.position.x = abs($Position2D.position.x) * -1
+			if is_on_floor():
+				$AnimatedSprite.play("walk")
+		else:
+			velocity.x = 0
+			if is_on_floor():
+				$AnimatedSprite.play("idle")
+		
+		if Input.is_action_pressed("ui_up") && is_on_floor():
+			velocity.y = -JUMP_POWER
+			$AnimatedSprite.play("jump")
+		
+		if Input.is_action_just_pressed("ui_accept") && is_firing == false && is_on_floor():
+			is_firing = true
+			$AnimatedSprite.play("fire")
+		
+		velocity.y += (GRAVITY * delta)
+		velocity = move_and_slide(velocity, FLOOR)
 
 
 func _on_AnimatedSprite_animation_finished():
