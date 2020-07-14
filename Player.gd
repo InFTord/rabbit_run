@@ -10,6 +10,11 @@ var is_firing = false
 var is_dead = false
 var velocity = Vector2()
 
+var morkvas = 0
+
+func add_morkva():
+	morkvas += 1
+
 func death():
 	$AnimatedSprite.play("death")
 	is_dead = true
@@ -44,6 +49,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept") && is_firing == false && is_on_floor():
 			is_firing = true
 			$AnimatedSprite.play("fire")
+			
+		if Input.is_action_pressed("shift") && is_on_floor():
+			velocity.x = SPEED * 2
 		
 		velocity.y += (GRAVITY * delta)
 		velocity = move_and_slide(velocity, FLOOR)
