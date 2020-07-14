@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://animation_rabbit/idle/idle_2.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://animation_rabbit/jump/jump_0.png" type="Texture" id=6]
 [ext_resource path="res://animation_rabbit/fire/fire_1.png" type="Texture" id=7]
 [ext_resource path="res://animation_rabbit/fire/fire_2.png" type="Texture" id=8]
+[ext_resource path="res://animation_rabbit/death/sm1.png" type="Texture" id=9]
+[ext_resource path="res://animation_rabbit/death/sm4.png" type="Texture" id=10]
+[ext_resource path="res://animation_rabbit/death/sm2.png" type="Texture" id=11]
+[ext_resource path="res://animation_rabbit/death/sm3.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -30,17 +34,27 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "death",
+"speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.01233, 32.9889 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.29782, 6.0172 )
 frames = SubResource( 1 )
-animation = "fire"
+animation = "death"
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 4.85451, -6.76237, 8.32695, -10.7309, 4.7553, -21.2474, 0.0923061, -31.8631, -4.17383, -28.3907, -9.64331, -30.1469, -12.0244, -26.3768, -5.27795, -17.2492, -6.86536, -10.7012, -2.69843, -6.13741, -6.86536, -1.57363, -6.66693, 6.95866, -5.47638, 10.5303, -7.85748, 28.7854, -9.64331, 32.9523, 7.42126, 32.9523, 7.02441, 30.1744, 3.45275, 28.587, 5.437, 20.0547, 5.04015, 10.9272, 11.3898, 12.9114, 11.7866, 9.53818, 5.437, 5.37125 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.798775, 1.95917 )
+shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

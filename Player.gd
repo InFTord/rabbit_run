@@ -7,8 +7,13 @@ const JUMP_POWER = 400
 const ROCK = preload("res://Rock.tscn")
 
 var is_firing = false
+var is_dead = false
 var velocity = Vector2()
 
+func death():
+	$AnimatedSprite.play("death")
+	$CollisionShape2D.set_deferred("disabled", true)
+	is_dead = true
 
 func _physics_process(delta):
 	if position.y > 800:

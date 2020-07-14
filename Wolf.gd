@@ -41,3 +41,8 @@ func change_direction():
 #func _on_AnimatedSprite_animation_finished():
 	#if $AnimatedSprite.animation == "attack":
 	#	is_attacking = false
+
+
+func _on_Area2D_body_entered(body):
+	if "Player" in body.name:
+		body.death()
