@@ -28,7 +28,7 @@ func _physics_process(delta):
 func change_direction():
 	direction *= -1
 	$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
-	$Area2D/CollisionShape2D.position.x *= -1
+	$Area2D/CollisionShape2D.position.x *= (-1)
 
 #func _on_Area2D_body_entered(body):
 #	if is_alive && "Player" in body.name:
