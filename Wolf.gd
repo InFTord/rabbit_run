@@ -44,5 +44,5 @@ func change_direction():
 
 
 func _on_Area2D_body_entered(body):
-	if "Player" in body.name:
+	if is_alive && "Player" in body.name:
 		body.death()
