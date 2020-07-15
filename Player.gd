@@ -32,8 +32,6 @@ func _physics_process(delta):
 		$Position2D.position.x = abs($Position2D.position.x)
 		if is_on_floor():
 			$AnimatedSprite.play("walk")
-		if Input.is_action_pressed("shift") && is_on_floor():
-			velocity.x = -SPEED * 2
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 		$AnimatedSprite.flip_h = true
@@ -46,9 +44,6 @@ func _physics_process(delta):
 			$AnimatedSprite.play("idle")
 			$AnimatedSprite.play("idle")
 	
-	if Input.is_action_pressed("shift") && is_on_floor():
-		velocity.x = SPEED * 2
-	
 	if Input.is_action_pressed("ui_up") && is_on_floor():
 		velocity.y = -JUMP_POWER
 		$AnimatedSprite.play("jump")
@@ -56,7 +51,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") && is_firing == false && is_on_floor():
 		is_firing = true
 		$AnimatedSprite.play("fire")
-	
+		
+	if Input.is_action_pressed("shift") && is_on_floor():
+		velocity.x = -SPEED * 2
+
 	velocity.y += (GRAVITY * delta)
 	velocity = move_and_slide(velocity, FLOOR)
 
