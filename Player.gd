@@ -10,6 +10,11 @@ var is_firing = false
 var is_dead = false
 var velocity = Vector2()
 
+var touch_left = false
+var touch_right = false
+var touch_jump = false
+var touch_down = false
+
 var morkvas = 0
 
 func add_morkva():
@@ -31,13 +36,13 @@ func _physics_process(delta):
 		position.y = 0
 	if is_firing == true:
 		return
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") or touch_right:
 		velocity.x = SPEED
 		$AnimatedSprite.flip_h = false
 		$Position2D.position.x = abs($Position2D.position.x)
 		if is_on_floor():
 			$AnimatedSprite.play("walk")
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left") or touch_left:
 		velocity.x = -SPEED
 		$AnimatedSprite.flip_h = true
 		$Position2D.position.x = abs($Position2D.position.x) * -1
@@ -49,7 +54,7 @@ func _physics_process(delta):
 			$AnimatedSprite.play("idle")
 			$AnimatedSprite.play("idle")
 	
-	if Input.is_action_pressed("ui_up") && is_on_floor():
+	if Input.is_action_pressed("ui_up") or touch_jump && is_on_floor():
 		velocity.y = -JUMP_POWER
 		$AnimatedSprite.play("jump")
 	
@@ -71,3 +76,21 @@ func _on_AnimatedSprite_animation_finished():
 		rock.position = $Position2D.global_position
 		get_parent().add_child(rock)
 		is_firing = false
+
+func _on_left_pressed():
+	touch_left = true
+
+func _on_right_pressed():
+	touch_right = true
+
+func _on_jump_pressed():
+	touch_jump = true
+
+func _on_left_released():
+	touch_left = false
+
+func _on_right_released():
+	touch_right = false
+
+func _on_jump_released():
+	touch_jump = false

@@ -15,3 +15,7 @@ func _ready():
 func _process(delta):
 	$Stats/CanvasLayer/Label.text = str($Player.morkvas)
 	$Stats_lives/CanvasLayer/Label.text = str($Player.lives)
+
+
+func _on_left_pressed():
+	pass # Replace with function body.

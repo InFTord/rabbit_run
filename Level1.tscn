@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fon/country_field.png" type="Texture" id=2]
@@ -10,6 +10,10 @@
 [ext_resource path="res://Level1.gd" type="Script" id=8]
 [ext_resource path="res://live.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Stats_lives.tscn" type="PackedScene" id=10]
+[ext_resource path="res://paki/Strelki/icon_64D.png" type="Texture" id=11]
+[ext_resource path="res://paki/Strelki/icon_64L.png" type="Texture" id=12]
+[ext_resource path="res://paki/Strelki/icon_64U.png" type="Texture" id=13]
+[ext_resource path="res://paki/Strelki/icon_64R.png" type="Texture" id=14]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
@@ -81,3 +85,34 @@ position = Vector2( 26.9009, 186.623 )
 scale = Vector2( 0.834854, 0.669733 )
 
 [node name="Stats_lives" parent="." instance=ExtResource( 10 )]
+
+[node name="Hud" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="GamePad" type="Node2D" parent="Hud"]
+
+[node name="left" type="TouchScreenButton" parent="Hud/GamePad"]
+position = Vector2( 15.9843, 288.794 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 12 )
+
+[node name="right" type="TouchScreenButton" parent="Hud/GamePad"]
+position = Vector2( 125.664, 288.109 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 14 )
+
+[node name="jump" type="TouchScreenButton" parent="Hud/GamePad"]
+position = Vector2( 70.4126, 230.857 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 13 )
+
+[node name="down" type="TouchScreenButton" parent="Hud/GamePad"]
+position = Vector2( 72.222, 341.603 )
+scale = Vector2( 0.75, 0.75 )
+normal = ExtResource( 11 )
+[connection signal="pressed" from="Hud/GamePad/left" to="Player" method="_on_left_pressed"]
+[connection signal="released" from="Hud/GamePad/left" to="Player" method="_on_left_released"]
+[connection signal="pressed" from="Hud/GamePad/right" to="Player" method="_on_right_pressed"]
+[connection signal="released" from="Hud/GamePad/right" to="Player" method="_on_right_released"]
+[connection signal="pressed" from="Hud/GamePad/jump" to="Player" method="_on_jump_pressed"]
+[connection signal="released" from="Hud/GamePad/jump" to="Player" method="_on_jump_released"]
