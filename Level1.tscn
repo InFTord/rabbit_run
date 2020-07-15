@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fon/country_field.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level1.gd" type="Script" id=8]
 [ext_resource path="res://live.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Stats_lives.tscn" type="PackedScene" id=10]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
@@ -75,10 +76,8 @@ position = Vector2( 302.018, 327.676 )
 [node name="live3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 526.511, 80.7344 )
 
-[node name="live4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 740.095, 325.965 )
-scale = Vector2( 0.834854, 0.669733 )
-
 [node name="live5" parent="." instance=ExtResource( 9 )]
 position = Vector2( 26.9009, 186.623 )
 scale = Vector2( 0.834854, 0.669733 )
+
+[node name="Stats_lives" parent="." instance=ExtResource( 10 )]

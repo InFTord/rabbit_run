@@ -12,6 +12,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	$Stats/CanvasLayer/Label.text = str($Player.morkvas)
-	$Stats_lives/CanvasLayer/Label.text = str($Player.lives)
+#func _process(delta):
+#	pass
