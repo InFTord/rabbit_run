@@ -87,7 +87,6 @@ scale = Vector2( 0.834854, 0.669733 )
 [node name="Stats_lives" parent="." instance=ExtResource( 10 )]
 
 [node name="Hud" type="CanvasLayer" parent="."]
-follow_viewport_enable = true
 
 [node name="GamePad" type="Node2D" parent="Hud"]
 
