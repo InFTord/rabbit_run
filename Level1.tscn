@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fon/country_field.png" type="Texture" id=2]
@@ -8,12 +8,17 @@
 [ext_resource path="res://morkva.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Stats.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level1.gd" type="Script" id=8]
+[ext_resource path="res://live.tscn" type="PackedScene" id=9]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 186.403, 235.505 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( 213.591, -35.59 )
+scale = Vector2( 0.834854, 0.669733 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -22,7 +27,7 @@ format = 1
 tile_data = PoolIntArray( -589803, 0, 0, -589802, 0, 0, -589801, 0, 0, -589800, 0, 0, -589799, 0, 0, -589798, 0, 0, -458734, 0, 0, -458733, 0, 0, -458732, 0, 0, -458731, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -327662, 0, 0, -327661, 0, 0, -196596, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, -1610612736, 0, 131082, -1610612736, 0, 196608, -1610612735, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196618, -1610612736, 0, 262144, -1610612735, 0, 262154, -1610612736, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0 )
 
 [node name="Exit_Restart" parent="TileMap" instance=ExtResource( 5 )]
-position = Vector2( 6.0713, 7.02132 )
+position = Vector2( 0.422567, 0.332031 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_base_scale = Vector2( 0, 0 )
@@ -30,8 +35,8 @@ scroll_base_scale = Vector2( 0, 0 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 399.994, 199.915 )
-scale = Vector2( 0.834854, 0.669733 )
+position = Vector2( 399.867, 200.018 )
+scale = Vector2( 0.834794, 0.670012 )
 texture = ExtResource( 2 )
 
 [node name="Wolf" parent="." instance=ExtResource( 4 )]
@@ -60,3 +65,20 @@ position = Vector2( 956.422, -184.519 )
 
 [node name="Stats" parent="." instance=ExtResource( 7 )]
 position = Vector2( 681.319, 29.9017 )
+
+[node name="live" parent="." instance=ExtResource( 9 )]
+position = Vector2( 431.101, 200.838 )
+
+[node name="live2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 302.018, 327.676 )
+
+[node name="live3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 526.511, 80.7344 )
+
+[node name="live4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 740.095, 325.965 )
+scale = Vector2( 0.834854, 0.669733 )
+
+[node name="live5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 26.9009, 186.623 )
+scale = Vector2( 0.834854, 0.669733 )

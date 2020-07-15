@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://live.gd" type="Script" id=1]
+[ext_resource path="res://paki/serdtce.png" type="Texture" id=2]
+
+[node name="live" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -1.12154, 6.08457, 5.01692, -0.0188208, 4.91169, -3.07051, 2.84215, -4.96467, 0.0710745, -4.96467, -1.57754, -3.00036, -3.05077, -4.99975, -5.99724, -4.92959, -7.96154, -2.96528, -7.99662, -0.194205, -1.99846, 5.90918 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

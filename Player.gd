@@ -19,6 +19,11 @@ func death():
 	$AnimatedSprite.play("death")
 	is_dead = true
 
+var lives = 0
+
+func add_live():
+	lives += 10
+
 func _physics_process(delta):
 	if is_dead:
 		return

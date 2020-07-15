@@ -24,6 +24,15 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, FLOOR)
 	if is_on_wall():
 		change_direction()
+#		direction = direction * -1
+#		$RayCast2D.position.x *= -1
+#	if $RayCast2D. is_colliding() == false:
+#		direction = direction * -1
+#		$RayCast2D.position.x *= -1
+#	if get_slide_count() > 0:
+#		for i in range (get_slide_count()):
+#			if "Player" in get_slide_count(i).collider.name:
+#				get_tree().change_scene(Target_stage)
 
 func change_direction():
 	direction *= -1
