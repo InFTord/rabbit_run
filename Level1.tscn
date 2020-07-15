@@ -10,7 +10,7 @@
 [ext_resource path="res://Level1.gd" type="Script" id=8]
 [ext_resource path="res://live.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Stats_lives.tscn" type="PackedScene" id=10]
-[ext_resource path="res://paki/Strelki/icon_64D.png" type="Texture" id=11]
+[ext_resource path="res://paki/Strelki/vstrel.png" type="Texture" id=11]
 [ext_resource path="res://paki/Strelki/icon_64L.png" type="Texture" id=12]
 [ext_resource path="res://paki/Strelki/icon_64U.png" type="Texture" id=13]
 [ext_resource path="res://paki/Strelki/icon_64R.png" type="Texture" id=14]
@@ -40,7 +40,7 @@ scroll_base_scale = Vector2( 0, 0 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 399.867, 200.018 )
+position = Vector2( 400.383, 200.097 )
 scale = Vector2( 0.834794, 0.670012 )
 texture = ExtResource( 2 )
 
@@ -91,22 +91,22 @@ scale = Vector2( 0.834854, 0.669733 )
 [node name="GamePad" type="Node2D" parent="Hud"]
 
 [node name="left" type="TouchScreenButton" parent="Hud/GamePad"]
-position = Vector2( 15.9843, 288.794 )
+position = Vector2( 23.5438, 320.292 )
 scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 12 )
 
 [node name="right" type="TouchScreenButton" parent="Hud/GamePad"]
-position = Vector2( 125.664, 288.109 )
+position = Vector2( 124.997, 320.383 )
 scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 14 )
 
 [node name="jump" type="TouchScreenButton" parent="Hud/GamePad"]
-position = Vector2( 70.4126, 230.857 )
+position = Vector2( 695.658, 315.779 )
 scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 13 )
 
-[node name="down" type="TouchScreenButton" parent="Hud/GamePad"]
-position = Vector2( 72.222, 341.603 )
+[node name="fire" type="TouchScreenButton" parent="Hud/GamePad"]
+position = Vector2( 627.179, 312.037 )
 scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 11 )
 [connection signal="pressed" from="Hud/GamePad/left" to="Player" method="_on_left_pressed"]
@@ -115,3 +115,5 @@ normal = ExtResource( 11 )
 [connection signal="released" from="Hud/GamePad/right" to="Player" method="_on_right_released"]
 [connection signal="pressed" from="Hud/GamePad/jump" to="Player" method="_on_jump_pressed"]
 [connection signal="released" from="Hud/GamePad/jump" to="Player" method="_on_jump_released"]
+[connection signal="pressed" from="Hud/GamePad/fire" to="Player" method="_on_fire_pressed"]
+[connection signal="released" from="Hud/GamePad/fire" to="Player" method="_on_fire_released"]

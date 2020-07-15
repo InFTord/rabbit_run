@@ -7,14 +7,14 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer"]
-position = Vector2( 673.091, 29.7302 )
+position = Vector2( 673.289, 31.7144 )
 texture = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_left = 694.756
-margin_top = 19.7822
+margin_top = 23.1554
 margin_right = 734.756
-margin_bottom = 33.7822
+margin_bottom = 37.1554
 rect_scale = Vector2( 1.3, 1.3 )
 custom_colors/font_color = Color( 0, 0.905882, 0.0627451, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )

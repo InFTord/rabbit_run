@@ -14,6 +14,7 @@ var touch_left = false
 var touch_right = false
 var touch_jump = false
 var touch_down = false
+var touch_fire = false
 
 var morkvas = 0
 
@@ -58,7 +59,7 @@ func _physics_process(delta):
 		velocity.y = -JUMP_POWER
 		$AnimatedSprite.play("jump")
 	
-	if Input.is_action_just_pressed("ui_accept") && is_firing == false && is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") or touch_fire && is_firing == false && is_on_floor():
 		is_firing = true
 		$AnimatedSprite.play("fire")
 		
@@ -85,6 +86,9 @@ func _on_right_pressed():
 
 func _on_jump_pressed():
 	touch_jump = true
+	
+func _on_fire_pressed():
+	touch_fire = true
 
 func _on_left_released():
 	touch_left = false
@@ -94,3 +98,6 @@ func _on_right_released():
 
 func _on_jump_released():
 	touch_jump = false
+	
+func _on_fire_released():
+	touch_fire = false
