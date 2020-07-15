@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 180
+const SPEED = 100
 const FLOOR = Vector2(0, -1)
 const GRAVITY = 300
 
@@ -28,7 +28,7 @@ func _physics_process(delta):
 func change_direction():
 	direction *= -1
 	$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
-	$Area2D/CollisionShape2D.position.x *= (-1)
+	$CollisionShape2D.position.x *= (-1)
 
 #func _on_Area2D_body_entered(body):
 #	if is_alive && "Player" in body.name:
