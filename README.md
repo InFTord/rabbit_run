@@ -1,2 +1,2 @@
-# rabbit_run
+# Wolf_Rabbit
 Здесь мы создаем игру
