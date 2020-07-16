@@ -21,6 +21,10 @@ boot_splash/image="res://fon/window1.png"
 boot_splash/fullsize=false
 config/icon="res://icon.png"
 
+[autoload]
+
+AIW="*res://AIWolf.gd"
+
 [display]
 
 window/size/width=800
