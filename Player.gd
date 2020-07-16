@@ -24,6 +24,7 @@ func add_morkva():
 func death():
 	$AnimatedSprite.play("death")
 	is_dead = true
+	get_tree().change_scene("res://GameOver.tscn")
 
 var lives = 0
 
@@ -35,6 +36,7 @@ func _physics_process(delta):
 		return
 	if position.y > 800:
 		position.y = 0
+		get_tree().change_scene("res://GameOver.tscn")
 	if is_firing == true:
 		return
 	if Input.is_action_pressed("ui_right") or touch_right:
