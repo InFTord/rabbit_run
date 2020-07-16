@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fon/country_field.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://paki/Strelki/icon_64L.png" type="Texture" id=12]
 [ext_resource path="res://paki/Strelki/icon_64U.png" type="Texture" id=13]
 [ext_resource path="res://paki/Strelki/icon_64R.png" type="Texture" id=14]
+[ext_resource path="res://ships.tscn" type="PackedScene" id=15]
+[ext_resource path="res://paki/tree0_0.png" type="Texture" id=16]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 8 )
@@ -86,6 +88,9 @@ scale = Vector2( 0.834854, 0.669733 )
 
 [node name="Stats_lives" parent="." instance=ExtResource( 10 )]
 
+[node name="Area2D" parent="Stats_lives" instance=ExtResource( 15 )]
+position = Vector2( 478.41, 201.157 )
+
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="GamePad" type="Node2D" parent="Hud"]
@@ -109,6 +114,20 @@ normal = ExtResource( 13 )
 position = Vector2( 627.179, 312.037 )
 scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 11 )
+
+[node name="Object" type="Node2D" parent="."]
+
+[node name="Tree" type="Sprite" parent="Object"]
+position = Vector2( 343.718, 174.762 )
+texture = ExtResource( 16 )
+
+[node name="Tree2" type="Sprite" parent="Object"]
+position = Vector2( 510.421, 46.9117 )
+texture = ExtResource( 16 )
+
+[node name="Tree3" type="Sprite" parent="Object"]
+position = Vector2( 531.496, 175.574 )
+texture = ExtResource( 16 )
 [connection signal="pressed" from="Hud/GamePad/left" to="Player" method="_on_left_pressed"]
 [connection signal="released" from="Hud/GamePad/left" to="Player" method="_on_left_released"]
 [connection signal="pressed" from="Hud/GamePad/right" to="Player" method="_on_right_pressed"]
