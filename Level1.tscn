@@ -42,8 +42,8 @@ scroll_base_scale = Vector2( 0, 0 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 400.383, 200.097 )
-scale = Vector2( 0.834794, 0.670012 )
+position = Vector2( 400.467, 200.167 )
+scale = Vector2( 0.834093, 0.669541 )
 texture = ExtResource( 2 )
 
 [node name="Wolf" parent="." instance=ExtResource( 4 )]
